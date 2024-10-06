@@ -1,0 +1,27 @@
+{
+	"uid": 1,
+	"title": "root",
+	"isFolder": true,
+	"items": [
+		{
+			"uid": 2,
+			"title": "src",
+			"isFolder": true,
+			"items": [
+				{
+					"uid": "3",
+					"title": "components",
+					"isFolder": true,
+					"items": [
+						{
+							"uid": "4",
+							"title": "button.js",
+							"isFolder": false,
+							"items": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
