@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback, useRef } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import { LoaderCircle } from 'lucide-react'
 import data from './data.json'
 import {
@@ -8,6 +8,7 @@ import {
 	useQueryClient,
 	useInfiniteQuery,
 } from '@tanstack/react-query'
+import PostList from './postList'
 
 //https://jsonplaceholder.typicode.com/todos?_page=${page}
 
@@ -33,6 +34,7 @@ const addData = (tree) => {
 
 function Page() {
 	const queryClient = useQueryClient()
+	const [toggle, setToggle] = useState(true)
 
 	const observer = useRef()
 
@@ -101,7 +103,12 @@ function Page() {
 
 	return (
 		<div className='flex justify-center flex-col items-center'>
-			<div>{content}</div>
+			<div>
+				<h2 className='title'>My Posts</h2>
+				<button onClick={() => setToggle(!toggle)}>Toggle</button>
+				{toggle && <PostList />}
+			</div>
+			{/* <div>{content}</div> */}
 			{/* {hasNextPage ? (
 				<button
 					className='flex p-2 border border-solid border-gray-400 rounded-md mt-3'
